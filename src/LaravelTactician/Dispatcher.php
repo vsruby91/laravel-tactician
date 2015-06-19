@@ -20,4 +20,9 @@ class Dispatcher
     {
         $this->bus->handle($command);
     }
+
+    public function dispatchFrom()
+    {
+        //
+    }
 }
