@@ -2,6 +2,8 @@
 
 namespace JildertMiedema\LaravelTactician;
 
+use ArrayAccess;
+
 trait DispatchesCommands
 {
     /**
