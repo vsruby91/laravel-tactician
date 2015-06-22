@@ -36,9 +36,14 @@ class TacticianServiceProvider extends ServiceProvider
 
     protected function registerServices()
     {
-        $this->app->bind('tactician.middleware', function () {
-            return new Collection(['tactician.middleware.command_handler']);
-        });
+        if (!$this->app['tactician.middleware']) {
+
+            $this->app->bind('tactician.middleware', function () {
+                return new Collection(['tactician.middleware.command_handler']);
+            });
+
+        }
+        
         $this->app->bind('tactician.handler.locator', function () {
             $config = $this->app['config'];
             $commandNamespace = $config->get('tactician.commandNamespace');
