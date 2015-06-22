@@ -21,7 +21,7 @@ class Dispatcher
 
     public function dispatch($command)
     {
-        $this->bus->handle($command);
+        return $this->bus->handle($command);
     }
 
     /**
